@@ -98,8 +98,6 @@
     <Content Include="content\font-awesome.css" />
     <Content Include="content\font-awesome.min.css" />
     <Content Include="content\ie10mobile.css" />
-    <Content Include="content\images\AngularJS-small.png" />
-    <Content Include="content\images\breezelogo.png" />
     <Content Include="content\images\icon.png" />
     <Content Include="content\styles.css" />
     <Content Include="content\toastr.css" />

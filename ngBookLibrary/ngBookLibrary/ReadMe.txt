@@ -1,0 +1,1 @@
+﻿Book Library application built using AngularJS framework.

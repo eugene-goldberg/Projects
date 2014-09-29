@@ -49,7 +49,14 @@
                         content: '<i class="fa fa-lock"></i> Book'
                     }
                 }
+            }, {
+                url: '/book/details/:id',
+                config: {
+                    title: 'Book Details',
+                    templateUrl: 'app/book/details.html'
+                }
             }
+
         ];
     }
 })();

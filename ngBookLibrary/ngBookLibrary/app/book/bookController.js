@@ -27,6 +27,7 @@
             });
         }
 
+
         function sortData(propertyName) {
             vm.sortProperty = propertyName;
         }

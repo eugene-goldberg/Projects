@@ -20,7 +20,7 @@
                                 </thead>
                                 <tbody>
                                     <tr data-ng-repeat="b in vm.books | orderBy: vm.sortProperty">
-                                        <td>{{b.title}}</td>
+                                        <td><a href="#/book/details/{{b.id}}">{{b.title}}</a></td>
                                         <td>{{b.author}}</td>
                                         <td>{{b.price | currency}}</td>
                                         <td>{{b.isAvailable}}</td>

@@ -59,6 +59,8 @@
   <ItemGroup>
     <Content Include="app\book\book.html" />
     <Content Include="app\book\bookController.js" />
+    <Content Include="app\book\detailsController.js" />
+    <Content Include="app\book\details.html" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />

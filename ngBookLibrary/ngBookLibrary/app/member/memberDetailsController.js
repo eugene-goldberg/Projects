@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'memberDetailsController';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', '$routeParams', memberDetailsController]);
+    angular.module('app').controller(controllerId, ['common', 'memberService', '$routeParams', memberDetailsController]);
 
-    function memberDetailsController(common, datacontext, $routeParams) {
+    function memberDetailsController(common, memberService, $routeParams) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
@@ -21,7 +21,7 @@
         }
 
         function getMember(id) {
-            return datacontext.getMember(id).then(function (data) {
+            return memberService.getMember(id).then(function (data) {
                 return vm.member = data;
             });
         }

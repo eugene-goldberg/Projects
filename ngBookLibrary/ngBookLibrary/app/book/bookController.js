@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'bookController';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', bookController]);
+    angular.module('app').controller(controllerId, ['common', 'bookService', bookController]);
 
-    function bookController(common, datacontext) {
+    function bookController(common, bookService) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
@@ -22,7 +22,7 @@
         }
 
         function getBooks() {
-            return datacontext.getBooks().then(function (data) {
+            return bookService.getBooks().then(function (data) {
                 return vm.books = data;
             });
         }

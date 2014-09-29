@@ -1,15 +1,15 @@
-(function () {
+﻿(function () {
     'use strict';
 
-    var serviceId = 'datacontext';
-    angular.module('app').factory(serviceId, ['common', datacontext]);
+    var serviceId = 'memberService';
+    angular.module('app').factory(serviceId, ['common', memberService]);
 
-    function datacontext(common) {
+    function memberService(common) {
         var $q = common.$q;
 
         var service = {
-            getPeople: getPeople,
-            getMessageCount: getMessageCount
+            getMembers: getMembers,
+            getMember: getMember
         };
 
         var people = [
@@ -24,10 +24,19 @@
 
         return service;
 
-        function getMessageCount() { return $q.when(72); }
-
-        function getPeople() {
+        function getMembers() {
             return $q.when(people);
+        }
+
+        function getMember(id) {
+            var m = {};
+            for (var i = 0; i < people.length; i++) {
+                if (people[i].id === parseInt(id, 10)) {
+                    m = people[i];
+                    break;
+                }
+            }
+            return $q.when(m);
         }
     }
 })();

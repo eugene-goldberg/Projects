@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'memberListController';
-    angular.module('app').controller(controllerId, ['common', 'datacontext', memberListController]);
+    angular.module('app').controller(controllerId, ['common', 'memberService', memberListController]);
 
-    function memberListController(common, datacontext) {
+    function memberListController(common, memberService) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
@@ -22,11 +22,10 @@
         }
 
         function getMembers() {
-            return datacontext.getMembers().then(function (data) {
+            return memberService.getMembers().then(function (data) {
                 return vm.members = data;
             });
         }
-
 
         function sortData(propertyName) {
             vm.sortProperty = propertyName;

@@ -1,0 +1,35 @@
+﻿<section class="mainbar" data-ng-controller="memberListController as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="widget wviolet">
+                        <div data-allow-collapse="true"
+                            data-cc-widget-header=""
+                            title="{{vm.title}}">
+                        </div>
+                        <div class="widget-content  text-info">
+                            <table class="table table-condensed table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-ng-click="vm.sort('firstName')">Firstname</th>
+                                        <th data-ng-click="vm.sort('lastName')">Lastname</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-ng-repeat="m in vm.members | orderBy: vm.sortProperty">
+                                        <td><a href="#/member/details/{{m.id}}">{{m.firstName}}</a></td>
+                                        <td>{{m.lastName}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="widget-foot">
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

@@ -61,6 +61,10 @@
     <Content Include="app\book\bookController.js" />
     <Content Include="app\book\detailsController.js" />
     <Content Include="app\book\details.html" />
+    <Content Include="app\member\memberList.html" />
+    <Content Include="app\member\memberListController.js" />
+    <Content Include="app\member\memberDetails.html" />
+    <Content Include="app\member\memberDetailsController.js" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />

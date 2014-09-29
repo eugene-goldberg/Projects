@@ -55,6 +55,22 @@
                     title: 'Book Details',
                     templateUrl: 'app/book/details.html'
                 }
+            }, {
+                url: '/member',
+                config: {
+                    title: 'Member',
+                    templateUrl: 'app/member/memberList.html',
+                    settings: {
+                        nav: 2,
+                        content: '<i class="fa fa-lock"></i> Member'
+                    }
+                }
+            }, {
+                url: '/member/details/:id',
+                config: {
+                    title: 'Member Details',
+                    templateUrl: 'app/member/memberDetails.html'
+                }
             }
 
         ];

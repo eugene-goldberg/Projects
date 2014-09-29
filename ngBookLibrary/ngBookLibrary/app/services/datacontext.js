@@ -11,7 +11,9 @@
             getPeople: getPeople,
             getMessageCount: getMessageCount,
             getBooks: getBooks,
-            getBook: getBook
+            getBook: getBook,
+            getMembers: getMembers,
+            getMember: getMember
         };
 
         var books = [
@@ -21,20 +23,21 @@
                 { id: 4, title: 'Mastering SQL', author: 'Rob Dan', price: 5000, isAvailable: true },
         ];
 
+        var people = [
+                { id: 1, firstName: 'John', lastName: 'Papa', dob: '1980-09-15' },
+                { id: 2, firstName: 'Ward', lastName: 'Bell', dob: '1980-09-15' },
+                { id: 3, firstName: 'Colleen', lastName: 'Jones', dob: '1980-09-15' },
+                { id: 4, firstName: 'Madelyn', lastName: 'Green', dob: '1980-09-15' },
+                { id: 5, firstName: 'Ella', lastName: 'Jobs', dob: '1980-09-15' },
+                { id: 6, firstName: 'Landon', lastName: 'Gates', dob: '1980-09-15' },
+                { id: 7, firstName: 'Haley', lastName: 'Guthrie', dob: '1980-09-15' }
+        ];
+
         return service;
 
         function getMessageCount() { return $q.when(72); }
 
         function getPeople() {
-            var people = [
-                { firstName: 'John', lastName: 'Papa', age: 25, location: 'Florida' },
-                { firstName: 'Ward', lastName: 'Bell', age: 31, location: 'California' },
-                { firstName: 'Colleen', lastName: 'Jones', age: 21, location: 'New York' },
-                { firstName: 'Madelyn', lastName: 'Green', age: 18, location: 'North Dakota' },
-                { firstName: 'Ella', lastName: 'Jobs', age: 18, location: 'South Dakota' },
-                { firstName: 'Landon', lastName: 'Gates', age: 11, location: 'South Carolina' },
-                { firstName: 'Haley', lastName: 'Guthrie', age: 35, location: 'Wyoming' }
-            ];
             return $q.when(people);
         }
 
@@ -51,6 +54,21 @@
                 }
             }
             return $q.when(b);
+        }
+
+        function getMembers() {
+            return $q.when(people);
+        }
+
+        function getMember(id) {
+            var m = {};
+            for (var i = 0; i < people.length; i++) {
+                if (people[i].id === parseInt(id, 10)) {
+                    m = people[i];
+                    break;
+                }
+            }
+            return $q.when(m);
         }
     }
 })();

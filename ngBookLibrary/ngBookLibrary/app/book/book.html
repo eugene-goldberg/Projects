@@ -2,13 +2,33 @@
     <section class="matter">
         <div class="container">
             <div class="row">
-                <div class="widget wviolet">
-                    <div data-cc-widget-header title="{{vm.title}}"></div>
-                    <div class="widget-content user">
-                        <h3>TODO: Implement Your Features</h3>
-                    </div>
-                    <div class="widget-foot">
-                        <div class="clearfix"></div>
+                <div class="col-md-6">
+                    <div class="widget wviolet">
+                        <div data-allow-collapse="true"
+                             data-cc-widget-header="" 
+                             title={{vm.title}}>
+                        </div>
+                        <div class="widget-content  text-info">
+                            <table class="table table-condensed table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Avaialable</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-ng-repeat="b in vm.books">
+                                        <td>{{b.title}}</td>
+                                        <td>{{b.author}}</td>
+                                        <td>{{b.isAvailable}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="widget-foot">
+                            <div class="clearfix"></div>
+                        </div>
                     </div>
                 </div>
             </div>

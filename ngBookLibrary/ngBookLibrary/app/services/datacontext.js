@@ -9,7 +9,8 @@
 
         var service = {
             getPeople: getPeople,
-            getMessageCount: getMessageCount
+            getMessageCount: getMessageCount,
+            getBooks: getBooks
         };
 
         return service;
@@ -27,6 +28,15 @@
                 { firstName: 'Haley', lastName: 'Guthrie', age: 35, location: 'Wyoming' }
             ];
             return $q.when(people);
+        }
+
+        function getBooks() {
+            var books = [
+                { title: 'Programming Fundamentals', author: 'Scott Hanselman', isAvailable: true },
+                { title: 'Building Web Apps using AngularKS', author: 'Dan Wahlin', isAvailable: false },
+                { title: 'Let Us C', author: 'Yashwant Kanetkar', isAvailable: false },
+            ];
+            return $q.when(books);
         }
     }
 })();

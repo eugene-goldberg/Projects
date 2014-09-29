@@ -1,20 +1,28 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'bookController';
-    angular.module('app').controller(controllerId, ['common', bookController]);
+    angular.module('app').controller(controllerId, ['common','datacontext', bookController]);
 
-    function bookController(common) {
+    function bookController(common, datacontext) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
         var vm = this;
         vm.title = 'Book';
+        vm.books = [];
 
         activate();
 
         function activate() {
-            common.activateController([], controllerId)
+            var promises = [getBooks()];
+            common.activateController(promises, controllerId)
                 .then(function () { log('Activated Book View'); });
+        }
+
+        function getBooks() {
+            return datacontext.getBooks().then(function (data) {
+                return vm.books = data;
+            });
         }
     }
 })();

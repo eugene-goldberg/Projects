@@ -32,9 +32,10 @@
 
         function getBooks() {
             var books = [
-                { title: 'Programming Fundamentals', author: 'Scott Hanselman', isAvailable: true },
-                { title: 'Building Web Apps using AngularKS', author: 'Dan Wahlin', isAvailable: false },
-                { title: 'Let Us C', author: 'Yashwant Kanetkar', isAvailable: false },
+                { title: 'Programming Fundamentals', author: 'Scott Hanselman', price: 700, isAvailable: true },
+                { title: 'Building Web Apps using AngularKS', author: 'Dan Wahlin', price: 1200, isAvailable: false },
+                { title: 'Let Us C', author: 'Yashwant Kanetkar', price: 500, isAvailable: false },
+                { title: 'Mastering SQL', author: 'Rob Dan', price: 5000, isAvailable: true },
             ];
             return $q.when(books);
         }

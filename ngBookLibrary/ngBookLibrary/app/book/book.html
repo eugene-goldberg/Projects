@@ -5,22 +5,24 @@
                 <div class="col-md-6">
                     <div class="widget wviolet">
                         <div data-allow-collapse="true"
-                             data-cc-widget-header="" 
-                             title={{vm.title}}>
+                            data-cc-widget-header=""
+                            title="{{vm.title}}">
                         </div>
                         <div class="widget-content  text-info">
                             <table class="table table-condensed table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Title</th>
-                                        <th>Author</th>
-                                        <th>Avaialable</th>
+                                        <th data-ng-click="vm.sort('title')">Title</th>
+                                        <th data-ng-click="vm.sort('author')">Author</th>
+                                        <th data-ng-click="vm.sort('price')">Price</th>
+                                        <th data-ng-click="vm.sort('isAvailable')">Available</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr data-ng-repeat="b in vm.books">
+                                    <tr data-ng-repeat="b in vm.books | orderBy: vm.sortProperty">
                                         <td>{{b.title}}</td>
                                         <td>{{b.author}}</td>
+                                        <td>{{b.price | currency}}</td>
                                         <td>{{b.isAvailable}}</td>
                                     </tr>
                                 </tbody>

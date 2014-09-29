@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'bookController';
-    angular.module('app').controller(controllerId, ['common','datacontext', bookController]);
+    angular.module('app').controller(controllerId, ['common', 'datacontext', bookController]);
 
     function bookController(common, datacontext) {
         var getLogFn = common.logger.getLogFn;
@@ -10,11 +10,13 @@
         var vm = this;
         vm.title = 'Book';
         vm.books = [];
+        vm.sortProperty = 'title';
+        vm.sort = sortData;
 
         activate();
 
         function activate() {
-            var promises = [getBooks()];
+            var promises = [getBooks(), sortData(vm.sortProperty)];
             common.activateController(promises, controllerId)
                 .then(function () { log('Activated Book View'); });
         }
@@ -23,6 +25,10 @@
             return datacontext.getBooks().then(function (data) {
                 return vm.books = data;
             });
+        }
+
+        function sortData(propertyName) {
+            vm.sortProperty = propertyName;
         }
     }
 })();

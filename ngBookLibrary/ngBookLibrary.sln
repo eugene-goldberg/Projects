@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ngBookLibrary", "ngBookLibrary\ngBookLibrary.csproj", "{545F75AB-F0E0-4C85-946C-E1338C7469DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ngBookLibrary.Server", "ngBookLibrary.Server\ngBookLibrary.Server.csproj", "{8FB3AA5A-2939-4BB9-B9EF-5043BA2FFE6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{545F75AB-F0E0-4C85-946C-E1338C7469DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{545F75AB-F0E0-4C85-946C-E1338C7469DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{545F75AB-F0E0-4C85-946C-E1338C7469DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB3AA5A-2939-4BB9-B9EF-5043BA2FFE6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB3AA5A-2939-4BB9-B9EF-5043BA2FFE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB3AA5A-2939-4BB9-B9EF-5043BA2FFE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB3AA5A-2939-4BB9-B9EF-5043BA2FFE6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

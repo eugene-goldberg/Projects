@@ -2,9 +2,9 @@
     'use strict';
 
     var serviceId = 'bookService';
-    angular.module('app').factory(serviceId, ['common', bookService]);
+    angular.module('app').factory(serviceId, ['common','$http', bookService]);
 
-    function bookService(common) {
+    function bookService(common, $http) {
         var $q = common.$q;
 
         var service = {
@@ -22,9 +22,44 @@
         return service;
 
         function getBooks() {
-            return $q.when(books);
-        }
+            var request = $http({
+                method: "get",
+            
+                url: "http://localhost:7357/api/book",
+                params: {
+                    action: "get"
+                }
+            });
 
+            return (request.then(handleSuccess, handleError));
+        }
+        
+        function handleSuccess(response) {
+
+            return (response.data);
+
+        }
+        function handleError(response) {
+
+            // The API response from the server should be returned in a
+            // nomralized format. However, if the request was not handled by the
+            // server (or what not handles properly - ex. server error), then we
+            // may have to normalize it on our end, as best we can.
+            if (
+                !angular.isObject(response.data) ||
+                !response.data.message
+                ) {
+
+                return ($q.reject("An unknown error occurred."));
+
+            }
+
+            // Otherwise, use expected error message.
+            return ($q.reject(response.data.message));
+
+        }
+        
+        
         function getBook(id) {
             var b = {};
             for (var i = 0; i < books.length; i++) {

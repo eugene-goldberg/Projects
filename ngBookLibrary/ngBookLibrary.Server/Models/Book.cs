@@ -11,5 +11,6 @@ namespace ngBookLibrary.Server.Models
         public string Title { get; set; }
         public string Author { get; set; }
         public Single Price { get; set; }
+        public bool IsAvailable { get; set; }
     }
 }

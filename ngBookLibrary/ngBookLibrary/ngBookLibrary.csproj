@@ -67,6 +67,8 @@
     <Content Include="app\member\memberDetailsController.js" />
     <Content Include="app\services\bookService.js" />
     <Content Include="app\services\memberService.js" />
+    <Content Include="content\images\not-available.png" />
+    <Content Include="content\images\available.png" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />

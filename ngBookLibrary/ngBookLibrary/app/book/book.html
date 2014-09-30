@@ -14,7 +14,6 @@
                                     <tr>
                                         <th data-ng-click="vm.sort('title')">Title</th>
                                         <th data-ng-click="vm.sort('author')">Author</th>
-                                        <th data-ng-click="vm.sort('price')">Price</th>
                                         <th data-ng-click="vm.sort('isAvailable')">Available</th>
                                     </tr>
                                 </thead>
@@ -22,8 +21,11 @@
                                     <tr data-ng-repeat="b in vm.books | orderBy: vm.sortProperty">
                                         <td><a href="#/book/details/{{b.id}}">{{b.title}}</a></td>
                                         <td>{{b.author}}</td>
-                                        <td>{{b.price | currency}}</td>
-                                        <td>{{b.isAvailable}}</td>
+                                        <td>
+                                            <img alt="{{b.title}}"
+                                                data-ng-src="{{b.isAvailable && '/content/images/available.png' || '/content/images/not-available.png'}}"
+                                                title="{{b.title}}" />
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>

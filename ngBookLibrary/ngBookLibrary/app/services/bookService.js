@@ -24,7 +24,6 @@
         function getBooks() {
             var request = $http({
                 method: "get",
-            
                 url: "http://localhost:7357/api/book",
                 params: {
                     action: "get"
@@ -60,15 +59,27 @@
         }
         
         
+        //function getBook(id) {
+        //    var b = {};
+        //    for (var i = 0; i < books.length; i++) {
+        //        if (books[i].id === parseInt(id, 10)) {
+        //            b = books[i];
+        //            break;
+        //        }
+        //    }
+        //    return $q.when(b);
+        //}
+
         function getBook(id) {
-            var b = {};
-            for (var i = 0; i < books.length; i++) {
-                if (books[i].id === parseInt(id, 10)) {
-                    b = books[i];
-                    break;
+            var request = $http({
+                method: "get",
+                url: "http://localhost:7357/api/book/" + id,
+                params: {
+                    action: "get"
                 }
-            }
-            return $q.when(b);
+            });
+
+            return (request.then(handleSuccess, handleError));
         }
     }
 })();
